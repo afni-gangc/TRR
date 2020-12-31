@@ -1,0 +1,27 @@
+#shell script using 3dLMEr in AFNI to estimate test-retest reliability analysis at the 
+#whole-brain voxel-wise level data information for the conflict contrast between two 
+#conditions: 42 subjects, two sessions, two conditions (congruent and incongrugent), #~190 
+#trials per condition per session.
+
+3dLMEr -prefix conflict \
+       -TRR             \
+       -jobs 16         \
+       -qVars 'cond'    \
+       -bounds -2 2     \
+       -model '0+sess+cond:sess+(0+sess|Subj)+(0+cond:sess|Subj)' \
+       -dataTable @conflict.tbl
+       
+#The file "conflict.tbl" contains the input data information in a long format with a header
+#that indicates the columns. Specificially the first column lists the subject labels (20608,
+#...), the second column identifies the two sessions (Time1 and Time2), the third column 
+#codes the two sessions (-0.5 and 0.5), and the last column provides the 3D data (regression
+#coefficients from individual subject level)
+
+Subj  sess  cond      InputFile
+20608 Time1 -0.5 t1/1_CL_Cong_cor_20608+tlrc
+20608 Time1 -0.5 t1/1_CR_Cong_cor_20608+tlrc
+20608 Time1 -0.5 t1/2_CL_Cong_cor_20608+tlrc
+20608 Time1 -0.5 t1/2_CR_Cong_cor_20608+tlrc
+20608 Time1 -0.5 t1/3_CL_Cong_cor_20608+tlrc
+20608 Time1 -0.5 t1/3_CR_Cong_cor_20608+tlrc
+...
