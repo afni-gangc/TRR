@@ -8,16 +8,15 @@
       -model '1+Session+(1|Subj)' \
       -dataTable @conflict.txt
       
-# The file "conflict.txt" contains the input data information in a long format with a header
-# that indicates the columns. Specificially, the first column lists the subject labels (20608,
-# ...), the second column identifies the two sessions (Time1 and Time2), the third column 
-# provides the 3D data (contrast between congruent and incongruent from individual subject 
-# level).
+# The file "conflict.txt" with 84 rows contains the input data information in a long format 
+# with a header that indicates the columns. Specificially, the first column lists the subject 
+# labels (20608, ...), the second column identifies the two sessions (Time1 and Time2), the 
+# third column provides the 3D data (contrast between congruent and incongruent from 
+# individual subject level).
 
 Subj  Session    InputFile
 20608  Time1   1_20608+tlrc
 20608  Time2   2_20608+tlrc
 20610  Time1   1_20610+tlrc
 20610  Time2   2_20610+tlrc
-...      
-      
+...
