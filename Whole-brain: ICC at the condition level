@@ -1,0 +1,23 @@
+# Bleow is a shell script using 3dICC in AFNI that performs intraclass correleation (ICC) 
+# analysis through condition-level modeling at the whole-brain voxel-wise level with data 
+# for the conflict contrast in a Flanker task between two conditions: 42 subjects, two 
+# sessions, two conditions (congruent and incongrugent).
+
+3dICC -prefix conflict-ICC \
+      -jobs 16 \
+      -model '1+Session+(1|Subj)' \
+      -dataTable @conflict.txt
+      
+# The file "conflict.txt" contains the input data information in a long format with a header
+# that indicates the columns. Specificially, the first column lists the subject labels (20608,
+# ...), the second column identifies the two sessions (Time1 and Time2), the third column 
+# provides the 3D data (contrast between congruent and incongruent from individual subject 
+# level).
+
+Subj  Session    InputFile
+20608  Time1   1_20608+tlrc
+20608  Time2   2_20608+tlrc
+20610  Time1   1_20610+tlrc
+20610  Time2   2_20610+tlrc
+...      
+      
