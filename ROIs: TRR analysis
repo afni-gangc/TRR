@@ -7,10 +7,10 @@ TRR -prefix L-MOG     \
     -chains 4         \
     -iterations 1000  \
     -WCP 8            \
-    -Y RT             \
+    -Y y              \
     -se SE            \
     -subject Subj     \
-    -distY studewnt   \
+    -distY student    \
     -repetition sess  \
     -condition cond   \
     -dataTable MOG.tbl
@@ -21,7 +21,7 @@ TRR -prefix L-MOG     \
 # codes the two conditions (C1 and C2), the fourth column contains the standard error for each
 # effect estimate in the last column.
 
-     Subj  sess  cond     se      Y
+     Subj  sess  cond     se      y
      S01   sess1  C1    0.315   0.162
      S01   sess1  C1    0.212   0.341
      ...
