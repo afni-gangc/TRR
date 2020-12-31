@@ -14,7 +14,7 @@
 # The file "conflict.tbl" contains the input data information in a long format with a header
 # that indicates the columns. Specificially the first column lists the subject labels (20608,
 # ...), the second column identifies the two sessions (Time1 and Time2), the third column 
-# codes the two sessions (-0.5 and 0.5), and the last column provides the 3D data (regression
+# codes the two conditions (-0.5 and 0.5), and the last column provides the 3D data (regression
 # coefficients from individual subject level)
 
 Subj  sess  cond      InputFile
